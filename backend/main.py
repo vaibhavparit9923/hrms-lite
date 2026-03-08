@@ -5,6 +5,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import models, schemas
 from database import SessionLocal, engine
 
+
+
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
@@ -84,14 +86,4 @@ def get_attendance(employee_id: str, db: Session = Depends(get_db)):
         models.Attendance.employee_id == employee_id
     ).all()
 
-@app.delete("/employees/{emp_id}")
-def delete_employee(emp_id: int, db: Session = Depends(get_db)):
-    employee = db.query(models.Employee).filter(models.Employee.id == emp_id).first()
-
-    if not employee:
-        raise HTTPException(status_code=404, detail="Employee not found")
-
-    db.delete(employee)
-    db.commit()
-
-    return {"message": "Employee deleted"}    
+ 
