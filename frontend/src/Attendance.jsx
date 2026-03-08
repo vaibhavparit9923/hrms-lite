@@ -22,7 +22,7 @@ function Attendance() {
 
   const getAttendance = () => {
 
-    axios.get(`http://127.0.0.1:8000/attendance/${data.employee_id}`)
+    axios.get("https://hrms-lite-jftm.onrender.com/${data.employee_id}")
       .then(res => {
         setRecords(res.data);
       });

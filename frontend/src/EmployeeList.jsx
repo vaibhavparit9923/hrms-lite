@@ -17,7 +17,7 @@ function EmployeeList() {
   }, []);
 
   const deleteEmployee = (id) => {
-    axios.delete(`http://127.0.0.1:8000/employees/${id}`)
+    axios.delete("https://hrms-lite-jftm.onrender.com/employees/${id}")
       .then(() => {
         alert("Employee deleted");
         fetchEmployees();

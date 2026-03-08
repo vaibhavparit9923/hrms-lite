@@ -12,7 +12,7 @@ function AddEmployee() {
 
   const handleSubmit = () => {
 
-    axios.post("http://127.0.0.1:8000/employees", form)
+    axios.post("https://hrms-lite-jftm.onrender.com/employees", form)
       .then(() => {
         alert("Employee Added Successfully");
       });
