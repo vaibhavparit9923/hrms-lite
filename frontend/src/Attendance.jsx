@@ -13,7 +13,7 @@ function Attendance() {
 
   const submitAttendance = () => {
 
-    axios.post("http://127.0.0.1:8000/attendance", data)
+    axios.post("https://hrms-lite-jftm.onrender.com/attendance", data)
       .then(() => {
         alert("Attendance Marked");
       });
