@@ -13,6 +13,7 @@ function AddEmployee() {
   const handleSubmit = () => {
 
     axios.post("https://hrms-lite-jftm.onrender.com/employees", form)
+    
       .then(() => {
         alert("Employee Added Successfully");
       });

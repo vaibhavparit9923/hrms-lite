@@ -6,7 +6,7 @@ function EmployeeList() {
   const [employees, setEmployees] = useState([]);
 
   const fetchEmployees = () => {
-    axios.get("http://127.0.0.1:8000/employees")
+    axios.get("https://hrms-lite-jftm.onrender.com/employees")
       .then(res => {
         setEmployees(res.data);
       });
@@ -17,7 +17,7 @@ function EmployeeList() {
   }, []);
 
   const deleteEmployee = (id) => {
-    axios.delete("https://hrms-lite-jftm.onrender.com/employees/${id}")
+    axios.delete(`https://hrms-lite-jftm.onrender.com/employees/${id}`)
       .then(() => {
         alert("Employee deleted");
         fetchEmployees();

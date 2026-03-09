@@ -14,6 +14,9 @@ function Attendance() {
   const submitAttendance = () => {
 
     axios.post("https://hrms-lite-jftm.onrender.com/attendance", data)
+    
+
+    
       .then(() => {
         alert("Attendance Marked");
       });
@@ -22,7 +25,10 @@ function Attendance() {
 
   const getAttendance = () => {
 
-    axios.get("https://hrms-lite-jftm.onrender.com/${data.employee_id}")
+    
+    axios.get(`https://hrms-lite-jftm.onrender.com/attendance/${data.employee_id}`)
+    
+
       .then(res => {
         setRecords(res.data);
       });
